@@ -1,6 +1,31 @@
+import fs from 'fs';
+
 import chalk from 'chalk';
 
-console.log(chalk.blue('olá mundo'));
+function trataErro(erro){
+    throw new Error(chalk.red(erro))
+}
 
-console.log('São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input), a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/');
-console.log('São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input), a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/');
+
+
+
+// Promisses usando then
+
+// function getArquivo(path){
+//     const encoding = 'utf-8';
+//     fs.promises.readFile(path, encoding)
+//         .then((texto) => console.log(chalk.green(texto)))
+//         .catch((erro) => trataErro(erro))
+// }
+
+// function getArquivo(path){
+//     const encoding ='utf-8'
+//     fs.readFile(path, encoding, (erro, texto) => {
+//         if (erro){
+//             trataErro(erro);
+//         }
+//         console.log(chalk.green(texto));
+//     })
+// }
+
+getArquivo('./arquivos/texto.m')
