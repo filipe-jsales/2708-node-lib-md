@@ -6,7 +6,18 @@ function trataErro(erro){
     throw new Error(chalk.red(erro))
 }
 
+async function getArquivo(path){
+    try{
+        const encoding = 'utf-8';
+        const texto = await fs.promises.readFile(path, encoding); 
+        console.log(chalk.green(texto))
+    }
+    catch (erro){
+        trataErro(erro)
+    }
 
+
+}
 
 
 // Promisses usando then
@@ -28,4 +39,5 @@ function trataErro(erro){
 //     })
 // }
 
+// getArquivo('./arquivos/texto.md')
 getArquivo('./arquivos/texto.m')
